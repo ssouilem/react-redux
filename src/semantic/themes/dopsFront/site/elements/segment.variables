@@ -1,0 +1,17 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@borderWidth: 0;
+@boxShadow: 'none';
+@borderWidth: 0px;
+@border: @borderWidth solid @borderColor;
+
+@verticalPadding: 0em;
+@horizontalPadding: 0em;
+@padding: @verticalPadding @horizontalPadding;
+
+@verticalMargin: 0rem;
+@horizontalMargin: 0em;
+@margin: @verticalMargin @horizontalMargin;
+@borderRadius: @defaultBorderRadius;

@@ -1,0 +1,44 @@
+import React from 'react'
+
+import { renderIntoDocument } from 'SHARED_TESTS/testHelpers'
+import { sandbox } from 'sinon'
+
+import TestUtils from 'react-addons-test-utils'
+
+import {{ properCase name }} from 'COMPONENTS/{{ properCase name }}/{{ properCase name }}'
+
+describe('(component) {{ properCase name }}', () => {
+  let _props
+  beforeEach(() => {
+    sandbox.create()
+  })
+  afterEach(() => {
+    sandbox.restore()
+  })
+
+  it('should contain other react components and pass props', () => {
+    let component = getComponent()
+    // let aComponent = TestUtils.findRenderedComponentWithType(component, AComponent)
+    // expect(aComponent.props.backTitle).to.equal('Mission Foo Bar')
+    // expect(aComponent.props.content).to.have.length(1)
+  })
+
+
+  it('should execute code from componentWillReceiveProps when props are updated', () => {
+    // const node = document.createElement('div')
+    // let _props = {
+    //   // initial props
+    // }
+    // render(<{{ properCase name }} { ..._props } />, node)
+    // _props = { } // updated props
+    // render(<{{ properCase name }} { ..._props } />, node)
+    // Assert code has been executed
+  })
+
+  const getComponent = () => {
+    _props = {
+      // props
+    }
+    return renderIntoDocument(<{{ properCase name }} { ..._props } />)
+  }
+})

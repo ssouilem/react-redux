@@ -1,0 +1,13 @@
+.DS_STORE
+*.log
+.idea
+*.pyc
+
+nginx/default.conf
+dist
+
+*node_modules
+
+coverage
+*Phantom*
+test-reports.xml

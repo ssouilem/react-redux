@@ -1,0 +1,56 @@
+@import '~SHARED_STYLES/all.less';
+
+.inputContainer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.inputGroup {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: @open-lighter-gray;
+}
+
+.inputStyle {
+  position: relative;
+  background-color: transparent;
+  width: ~"calc(100% - 42px)";
+  height: 58px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 0;
+  z-index: 5;
+  .openSans-font(24px, 300, @open-dark-gray, none);
+  outline: none;
+  border: thin solid transparent;
+  cursor: initial;
+  &Error {
+    border: thin solid red;
+    &:focus {
+      border: thin solid red;
+    }
+  }
+  &[disabled] {
+    border: thin solid @open-light-gray;
+    background-color: @open-light-gray;
+    color: #c1c1c1;
+    cursor: default;
+  }
+}
+
+.labelStyle, .hintStyle {
+  position: absolute;
+  height: 51px;
+  padding-top: 13px;
+  padding-left: 20px;
+  .openSans-font(24px, 300, @open-dark-gray, inherit);
+  opacity: .5;
+  cursor: copy;
+}
+
+.errorStyle {
+  .openSans-font(16px, 300, red, left);
+  margin-top: 5px;
+}

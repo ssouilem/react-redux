@@ -1,0 +1,55 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+// @pageMinWidth  : 1049px;
+@pageOverflowX : visible;
+
+@emSize: 14px;
+@fontSize : 13px;
+@letterSpacing: 0.03em;
+@fontName : 'Proxima Nova';
+@importGoogleFonts : false;
+
+@h1: 2.25em;
+
+@defaultBorderRadius: 0; /* 0.30769em;  4px @ 13em */
+
+@disabledOpacity: 0.3;
+
+@linkColor: #0066C0;
+@linkHoverColor: #C45500;
+@linkHoverUnderline: underline;
+
+@borderColor: rgba(0, 0, 0, 0.13);
+@solidBorderColor: #DDDDDD;
+@internalBorderColor: rgba(0, 0, 0, 0.06);
+@selectedBorderColor: #51A7E8;
+
+/* Breakpoints */
+@largeMonitorBreakpoint: 1920px;//1280px;
+@computerBreakpoint: 1280px;//1049px; //@largeMonitorBreakpoint;
+@tabletBreakpoint: 768px; // @largeMonitorBreakpoint;
+
+/* Colors */
+@black: #474747;
+@boostGrey: #7D8E9A;
+@grey: #ced6dc;
+@blue: #3DB9EA;
+@teal: #38B6C4;
+@orange: #F4940B;
+@yellow: #EFD518;
+@primary: @orange;
+@secondary: @yellow;
+
+/*---   Neutrals  ---*/
+@fullBlack        : #000000;
+@darkGrey         : #AAAAAA;
+@lightGrey        : #F0F0F3;
+@offWhite         : #FAFAFA;
+@darkWhite        : #F0F0F0;
+@white            : #FFFFFF;
+
+@infoBackgroundColor: #E6F1F6;
+@infoTextColor: #7D8E9A;
+@thirteenColumn: 55%;

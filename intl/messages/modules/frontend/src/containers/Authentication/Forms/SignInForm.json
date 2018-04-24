@@ -1,0 +1,17 @@
+[
+  {
+    "id": "signin.email.fieldname",
+    "description": "Sign-In email fieldname",
+    "defaultMessage": "Votre adresse email"
+  },
+  {
+    "id": "signin.password.fieldname",
+    "description": "Sign-In password fieldname",
+    "defaultMessage": "Votre mot de passe"
+  },
+  {
+    "id": "signin.button.submit",
+    "description": "Sign In label",
+    "defaultMessage": "Je me connecte"
+  }
+]

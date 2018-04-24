@@ -1,0 +1,51 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+  .roboto-font(20px, normal, @open-dark-gray, left);
+}
+
+thead {
+  background-color: @open-lighter-gray;
+}
+
+th {
+  padding: 10px 15px;
+  font-weight: normal;
+}
+
+tbody {
+  > tr {
+    font-weight: lighter;
+    border-bottom: 1px solid @open-background-color;
+    cursor: pointer;
+    transition: all 400ms;
+    &:hover {
+      color: white;
+      background-color: @open-light-gray;
+      transform: scale(1.05, 1);
+    }
+    @media screen and (max-width: 800px) {
+      .column;
+      .centerContent;
+      margin: 10px 0px;
+      border-bottom: 1px solid @open-light-light-color;
+
+    }
+    > tr {
+      text-align: center;
+      border-bottom: 1px solid @open-background-color;
+    }
+  }
+}
+
+tr:nth-of-type(even) {
+  background-color: #fdfdfd;
+  &:hover {
+    background-color: @open-light-gray;
+  }
+}
+
+td {
+  padding: 20px 15px;
+}

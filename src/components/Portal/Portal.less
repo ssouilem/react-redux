@@ -1,0 +1,49 @@
+@import '~./App.less';
+@import (reference) '~FRONT_THEME/site/modules/sidebar.variables';
+@import (reference) '~FRONT_THEME/site/globals/site.variables';
+
+.ui.modal.portal {
+  padding: 0;
+  @media screen and (min-device-height: 720px){
+    height: 93%;
+    margin-top: 2.5% !important;
+  }
+  @media screen and (min-device-height: 1080px){
+    height: 70%;
+    margin-top: 5% !important;
+  }
+  &.ui.fullscreen.modal {
+    margin-right: 0;
+    & > .close {
+      top: -2.5rem;
+      right: 0rem;
+      color: @white;
+      font-size: 2rem;
+      // background-color: white;
+      padding-top: 0;
+      margin-right: 0;
+    }
+  }
+  & > .portalModalContent.content {
+    height: 100%;
+    right: 0;
+  }
+  .portalContent {
+    margin-left: @thinWidth;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .portalContentExpanded {
+    margin-left: @veryThinWidth;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .portalContentSegment {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 !important;
+    height: calc(~'100% - 57px');
+  }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "avatareditor.faceselector.label",
+    "description": "Face Selector",
+    "defaultMessage": "Visage"
+  },
+  {
+    "id": "avatareditor.hairselector.label",
+    "description": "Hair Selector",
+    "defaultMessage": "Cheveux"
+  },
+  {
+    "id": "avatareditor.eyesselector.label",
+    "description": "Eyes Selector",
+    "defaultMessage": "Yeux"
+  },
+  {
+    "id": "avatareditor.noseselector.label",
+    "description": "Nose Selector",
+    "defaultMessage": "Nez"
+  },
+  {
+    "id": "avatareditor.mouthselector.label",
+    "description": "Mouth Selector",
+    "defaultMessage": "Bouche"
+  }
+]

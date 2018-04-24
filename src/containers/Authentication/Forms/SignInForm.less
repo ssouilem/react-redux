@@ -1,0 +1,19 @@
+// @import '~SHARED_STYLES/all.less';
+
+.signInForm {
+  &:extend(.column, .centerContent);
+  padding: 30px 0px;
+}
+
+.signInForm > * {
+  width: ~"50%";
+  margin: 0px 20px 20px 20px;
+  @media screen and ( max-width: 800px) {
+    width: ~"calc(100% - 40px)";
+  }
+}
+
+.formButton {
+  &:extend(.row);
+  justify-content: flex-end;
+}

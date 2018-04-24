@@ -1,0 +1,137 @@
+@import '~SHARED_STYLES/all.less';
+
+.navigationBar {
+  &:extend(.row);
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, .9);
+  height: 60px;
+  padding: 10px;
+  border-bottom: 0.5px solid #cddbe4;
+  .roboto-font(12px, lighter, white, center);
+  cursor: default;
+  text-transform: uppercase;
+  @media screen and ( max-width: 800px) {
+    height: 40px;
+  }
+}
+
+.home {
+  margin-left: 30px;
+  width: 120px;
+  @media screen and ( max-width: 800px) {
+    margin-left: 5px;
+  }
+}
+
+.rightSide {
+  &:extend(.row);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.links {
+  &:extend(.row, .centerContent);
+  margin: 0 16px;
+  a {
+    color: white;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: @open-dark-blue;
+    text-decoration: none;
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 600ms,
+    }
+    &:not(hover) {
+      transform: scale(1);
+      transition: transform 600ms,
+    }
+  }
+  @media screen and ( max-width: 800px) {
+    display: none;
+  }
+}
+
+.search {
+  padding:8px 15px;
+  background:rgba(50, 50, 50, 0.2);
+  border:0px solid #dbdbdb;
+}
+
+.signIn {
+  &:extend(.row, .centerContent);
+  margin: 0px 24px;
+  color: @open-dark-blue;
+  a {
+    text-decoration: none;
+  }
+  @media screen and ( max-width: 800px) {
+    margin: 0px 9px;
+
+  }
+}
+
+.signIn > * {
+  &:extend(.row, .centerContent);
+  > * {
+    margin: 0px 4px;
+  }
+}
+
+.connexionIcon  {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+
+.userPointer {
+  width: 50px;
+  &:extend(.row, .wrap, .centerContent);
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.additionalComponent {
+  margin-left: 16px;
+  margin-right: 75px;
+  @media screen and ( max-width: 800px) {
+    margin-right: 16px;
+    margin-left: 0px;
+  }
+}
+
+.burgerMenu {
+  @media screen and ( min-width: 800px) {
+    display: none;
+  }
+}
+
+.avatar {
+  height: 20px;
+  width: 20px;
+}
+
+.searchForm {
+  &:extend(.row, .centerContent);
+  padding: 30px 0px;
+}
+
+.searchForm > * {
+  width: ~"50%";
+  margin: 0px 20px 0px 0px;
+  @media screen and ( max-width: 800px) {
+    width: ~"calc(100% - 40px)";
+  }
+}
+
+.formButton {
+  &:extend(.column);
+  justify-content: flex-end;
+}
+
+.connectedBar {
+  &:extend(.row);
+}

@@ -1,0 +1,106 @@
+@import '~SHARED_STYLES/all.less';
+
+.container {
+  &:extend(.row);
+  justify-content: space-between;
+  width: 900px;
+}
+
+.formButton {
+  width: 20%;
+  height: 100%;
+}
+
+.formButton > * {
+  margin-bottom: 20px;
+}
+
+.label {
+  &:extend(.row, .centerContent);
+  margin: 0 16px;
+  span {
+    &:extend(.row, .centerContent);
+    width: 60px;
+    color: @open-dark-blue;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: @open-dark-blue;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 600ms,
+    }
+    &:not(hover) {
+      transform: scale(1);
+      transition: transform 600ms,
+    }
+  }
+  @media screen and ( max-width: 800px) {
+    display: none;
+  }
+  &Selected {
+    span {
+      background-color: @open-dark-blue;
+      color: white;
+    }
+  }
+}
+
+.textlabel {
+  span {
+    &:extend(.row, .centerContent);
+  }
+  color: @open-dark-blue;
+  margin: 10px 0;
+}
+
+.avatar {
+  height: 300px;
+  width: 300px;
+}
+
+.shapeSelector {
+  &:extend(.row);
+  height: 50px;
+  width: 100%;
+}
+
+.leftArrow {
+  margin-right: auto;
+  height: 100%;
+  width: 45px;
+  clip-path: polygon(100% 0, 100% 100%, 0 50%);
+  background-color: @open-dark-blue;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 600ms,
+  }
+  &:not(hover) {
+    transform: scale(1);
+    transition: transform 600ms,
+  }
+  @media screen and ( max-width: 800px) {
+    display: none;
+  }
+}
+
+.rightArrow {
+  margin-left: auto;
+  height: 100%;
+  width: 45px;
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+  background-color: @open-dark-blue;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 600ms,
+  }
+  &:not(hover) {
+    transform: scale(1);
+    transition: transform 600ms,
+  }
+}

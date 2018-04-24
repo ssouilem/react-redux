@@ -1,0 +1,12 @@
+[
+  {
+    "id": "navbar.search.field",
+    "description": "Query field",
+    "defaultMessage": "Wikis, Starter Packs, threads..."
+  },
+  {
+    "id": "navbar.button.search",
+    "description": "Search label",
+    "defaultMessage": "Search"
+  }
+]

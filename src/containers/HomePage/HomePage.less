@@ -1,0 +1,45 @@
+@import (reference) '~FRONT_THEME/site/globals/site.variables';
+
+.homePage {
+    height: 100%;
+    background-color: lighten(@grey, 20%);
+    & {
+        background-color: @teal;
+        background-image: url('FRONT_THEME/assets/images/fond.jpg');
+        background-repeat: repeat-x;
+        max-height: 259px;
+    }
+    & > .centered.row {
+        margin-top: 2em;
+    }
+    & > .row > .column {
+        & > .header {
+            margin-top: 0.2em;
+            font-size: 4.5em;
+            font-weight: 500;
+            letter-spacing: 0.2rem;
+        }
+        & > p {
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            font-size: 1.5em;
+            color: darken(@grey, 10%);
+            &.LabelOrange {
+                color: @orange
+            }
+        }
+        & > .bigIcons {
+            width: 12rem;
+            height: 12rem;
+            &.inverted {
+                background-color: #fff;
+            }
+        & > .big {
+            & > .code {
+                top: 33%;
+                left: 47%;
+            }
+        }
+    }
+    }
+}

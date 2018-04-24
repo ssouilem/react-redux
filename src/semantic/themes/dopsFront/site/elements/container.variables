@@ -1,0 +1,8 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+@gridGutterWidth: 0rem;
+
+@tabletGridWidth: @maxWidth;
+@computerGridWidth: @maxWidth;
+@largeMonitorGridWidth: @maxWidth;

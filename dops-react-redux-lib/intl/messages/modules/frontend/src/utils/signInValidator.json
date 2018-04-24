@@ -1,0 +1,12 @@
+[
+  {
+    "id": "authentication.field.required",
+    "description": "Required error",
+    "defaultMessage": "Requis"
+  },
+  {
+    "id": "authentication.field.emailinvalid",
+    "description": "Invalid Email error",
+    "defaultMessage": "Saisissez un email valide"
+  }
+]

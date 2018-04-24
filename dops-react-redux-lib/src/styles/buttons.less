@@ -1,0 +1,96 @@
+@import './all.less';
+
+.button {
+  outline: none;
+  padding: 16px 32px 16px 32px;
+  .openSans-font(20px, 300, inherit, center);
+  min-height: 56px;
+  &Disabled {
+    border: @open-light-gray;
+    background-color: @open-light-gray;
+    color: #c1c1c1;
+    cursor: default;
+  }
+  &Primary {
+    background-color: @open-light-blue;
+    border: none;
+  	color: white;
+    cursor: pointer;
+    &:hover {
+      background-color: #0072B9;
+      transition : background-color 300ms;
+    }
+  }
+  &Secondary {
+    background-color: @open-dark-blue;
+    border: none;
+  	color: white;
+    cursor: pointer;
+    &:hover {
+      background-color: #003E75;
+      transition : background-color 300ms;
+    }
+  }
+  &Destructive {
+    background-color: red;
+    border: none;
+  	color: white;
+    cursor: pointer;
+    &:hover {
+      background-color: #E60000;
+      transition : background-color 300ms;
+    }
+  }
+  &Default {
+    color: @open-dark-gray;
+    background-color: white;
+    border: solid 1px @open-lighter-gray;
+    cursor: pointer;
+    &:hover {
+      background-color: #eaeaea;
+      transition: background-color 300ms;
+    }
+  }
+}
+
+.button div {
+  &:extend(.row, .centerContent);
+}
+
+.buttonArrow {
+  &Left {
+    margin-right: 14px;
+  }
+  &Right {
+    margin-left: 14px;
+    transform: rotate(180deg);
+  }
+}
+
+.checkBox {
+  &:extend(.row);
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  margin: 10px;
+
+}
+
+.checkBoxItem {
+  &:extend(.column, .centerContent);
+  border: solid 1px @open-dark-blue;
+  border-radius: 5px;
+  .roboto-font(20px, 300, white, none);
+  height: 20px;
+  width: 20px;
+  &Checked {
+    background-color: @open-dark-blue;
+    transition: all 300ms;
+  }
+}
+
+.checkBox label {
+  .roboto-font(15px, 300, @open-dark-gray, center);
+  cursor: pointer;
+  margin-left: 10px;
+}

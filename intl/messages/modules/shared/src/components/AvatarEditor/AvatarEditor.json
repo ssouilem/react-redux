@@ -1,0 +1,22 @@
+[
+  {
+    "id": "avatareditor.colorselector.label",
+    "description": "Color Selector",
+    "defaultMessage": "Selectionner une couleur"
+  },
+  {
+    "id": "avatareditor.shapeselector.label",
+    "description": "Shape Selector",
+    "defaultMessage": "Selectionner un style"
+  },
+  {
+    "id": "save.button.submit",
+    "description": "Save button",
+    "defaultMessage": "Sauvegarder"
+  },
+  {
+    "id": "save.button.random",
+    "description": "Random Create",
+    "defaultMessage": "Création aléatoire"
+  }
+]

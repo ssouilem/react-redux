@@ -1,0 +1,9 @@
+modules/frontend/node_modules/**
+modules/frontend/src/index.html
+modules/backoffice/node_modules/**
+modules/backoffice/src/index.html
+modules/shared/node_modules/**
+dist/**
+node_modules/**
+coverage/**
+docker/**

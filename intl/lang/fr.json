@@ -1,0 +1,8 @@
+{
+  "VARS.APP": "application name",
+  "VARS.APPDOMAIN": "application domain",
+  "VARS.CFAPI": "CF entry point",
+  "VARS.CFORG": "CF organisation",
+  "VARS.BXAPIKEY": "BMX acces key",
+  "VARS.SONAR_TOKEN": "Sonar acces key"
+}

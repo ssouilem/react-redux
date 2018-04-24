@@ -1,0 +1,27 @@
+[
+  {
+    "id": "signIn.toast.title.error",
+    "description": "SignIn toast error title",
+    "defaultMessage": "Erreur interne"
+  },
+  {
+    "id": "avatarCreate.toast.title.error",
+    "description": "Avatar Create toast error",
+    "defaultMessage": "Erreur interne"
+  },
+  {
+    "id": "avatarCreate.toast.title.succes",
+    "description": "Avatar Create toast success",
+    "defaultMessage": "Votre avatar a bien été enregistré"
+  },
+  {
+    "id": "avatarUpdate.toast.title.error",
+    "description": "Avatar update toast error",
+    "defaultMessage": "Erreur interne"
+  },
+  {
+    "id": "avatarUpdate.toast.title.success",
+    "description": "Avatar update toast success",
+    "defaultMessage": "Votre avatar a bien ete modifie"
+  }
+]

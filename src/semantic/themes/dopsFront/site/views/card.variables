@@ -1,0 +1,6 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+/* Shadow */
+// @shadowDistance: 1px;
+@shadowBoxShadow: none;

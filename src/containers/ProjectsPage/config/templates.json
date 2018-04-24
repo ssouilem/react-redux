@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "CD-BLUEMIX-CF-REVIEWAPPS-STAGING-NODEJS-noNEXUS-noSONAR",
+    "staging": 1,
+    "name": "CD-BLUEMIX-CF-REVIEWAPPS-STAGING-NODEJS-noNEXUS-noSONAR",
+    "language": "NODEJS",
+    "offer": "CF",
+    "url":
+      "https://mirkwood.dops.open.global/repository/dops-raw/templates//CD-BLUEMIX-CF-REVIEWAPPS-STAGING-NODEJS-noNEXUS-noSONAR.tar.gz",
+    "variables": [
+      {
+        "documentation": "",
+        "name": "APP",
+        "description": "Application name, used for identifying in CF, and in the url"
+      },
+      {
+        "documentation": "",
+        "name": "APPDOMAIN",
+        "description": "Domain name for the app"
+      },
+      {
+        "validate": [
+          "https://api.eu-gb.bluemix.net",
+          "https://api.eu-de.bluemix.net",
+          "https://api.au-syd.bluemix.net",
+          "https://api.us-east.bluemix.net",
+          "https://api.ng.bluemix.net"
+        ],
+        "documentation": "",
+        "validate_type": "array",
+        "name": "CFAPI",
+        "description": "Entrypoint for bluemix"
+      },
+      {
+        "documentation": "",
+        "name": "CFORG",
+        "description": "BlueMix Organisation"
+      },
+      {
+        "documentation": "",
+        "name": "BXAPIKEY",
+        "description": "Bluemix API KEY"
+      }
+    ],
+    "CD": 1,
+    "provider": "BLUEMIX",
+    "SONAR": 0,
+    "reviewapps": 1,
+    "description":
+      "Template for a app developped \n with Review APPS\n with continuous deployment on staging\nbuilt in NODEJS\n without Artefact storage\n without Code Quality\n"
+  }
+]

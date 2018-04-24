@@ -1,0 +1,45 @@
+# This file is a template, and might need editing before it works on your project.
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: gitlab:82/dops/common/docker-images/dops
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+
+variables:
+ SONAR_EXCLUDE: 'config/**,node_modules/**,coverage/**,tests/**,bin/**,shared/**,dops-react-redux-lib/**,generators/**,cloudfoundry/**,src/axios.init.js,src/client.js,src/routes.js,src/redux/clients.js,src/redux/createStore.js,src/redux/rootReducer.js,src/redux/sagas.js,postcss.config.js'
+cache:
+  paths:
+  - node_modules/
+  - coverage/
+
+stages:
+  - provisioning
+  - test
+  - review
+
+Provisioning:
+  stage: provisioning
+  script:
+    - npm install
+    - npm prune
+    - npm update
+  artifacts:
+    paths:
+      - coverage/
+
+
+Test:
+  stage: test
+  script:
+    - npm run test
+
+Quality:
+  stage: review
+  script: 
+  - sonar-scanner  -Dsonar.projectKey=$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG  -Dsonar.sources=.  -Dsonar.host.url=https://smaug.dops.open.global  -Dsonar.login=$SONAR_TOKEN -D sonar.exclusions=$SONAR_EXCLUDE -D sonar.sourceEncoding="UTF-8" -D sonar.javascript.lcov.reportPaths=coverage/lcov/lcov.info
+  - export ANALYSIS=`curl -s  --user "$SONAR_TOKEN:" "https://smaug.dops.open.global/api/qualitygates/project_status?projectKey=d$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG" |jq .projectStatus.status -r`
+  - echo $ANALYSIS
+
+
+

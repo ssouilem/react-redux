@@ -1,0 +1,28 @@
+@import (reference) '~FRONT_THEME/site/globals/site.variables';
+
+.accordionMenu.accordion.ui {
+  & > .menuItem {
+    & > .item.link.title {
+    font-size: 1.1em !important;
+    padding: 10px 0 !important;
+    color: @grey !important;
+      & > i {
+        margin-bottom: 0.5em !important;
+      }
+    }
+    & > .active.title.link.item {
+      color: @yellow !important;
+    }
+    & > .content > .item {
+      text-align: left;
+    }
+  }
+  & .smallIcon.icon.small {
+    top: 41%;
+    left: 48%;
+  }
+}
+
+.ui.vertical.icon.menu .item > .icons {
+  display: block;
+}

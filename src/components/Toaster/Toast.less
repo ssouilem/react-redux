@@ -1,0 +1,50 @@
+// @import '~SHARED_STYLES/all.less';
+
+.toast {
+  z-index: 200;
+  position: fixed;
+  top: -60px;
+  width: 100%;
+  min-height: 60px;
+  &:extend(.column, .centerContent);
+  transition: all 1s ease;
+  opacity: 0;
+  &Open {
+    // background-color: @open-dark-blue;
+    // top: @header-height - 10px;
+    opacity: .95;
+    @media screen and (max-width: 800px) {
+      // top: @header-mobile-height;
+    }
+  }
+  &Error {
+    background-color: red;
+  }
+  &:hover {
+    box-shadow: 0px 0px 10px #777;
+    opacity: 1;
+  }
+  cursor: default;
+}
+
+.title {
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.message {
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  right: 20px;
+  top: auto;
+  bottom: auto;
+}

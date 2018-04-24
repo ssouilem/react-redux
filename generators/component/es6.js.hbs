@@ -1,0 +1,37 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
+{{#if wantMessages}}
+import { FormattedMessage } from 'react-intl'
+{{/if}}
+
+{{#if wantCSS}}
+import styles from './{{ properCase name }}.less'
+{{/if}}
+
+class {{ properCase name }} extends React.Component {
+  render = () =>
+    {{#if wantCSS}}
+    <div className={{curly true}} styles.{{ camelCase name }} {{curly}}>
+    {{else}}
+    <div>
+    {{/if}}
+    {{#if wantMessages}}
+      <FormattedMessage
+        id='{{ camelCase name }}.title.example'
+        description='A title for {{ properCase name }}'
+        defaultMessage='Title'
+      />
+    {{/if}}
+    </div>
+}
+
+{{ properCase name }}.propTypes = {
+  aString: PropTypes.string,
+  anObject: PropTypes.object,
+  aFunc: PropTypes.func,
+  aBool: PropTypes.bool,
+  anArray: PropTypes.array,
+}
+
+export default {{ properCase name }}

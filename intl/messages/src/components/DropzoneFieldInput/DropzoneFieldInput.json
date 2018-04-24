@@ -1,0 +1,7 @@
+[
+  {
+    "id": "input.dropzone.file",
+    "description": "file field",
+    "defaultMessage": "Déplacez votre fichier ici ou cliquer pour le choisir"
+  }
+]

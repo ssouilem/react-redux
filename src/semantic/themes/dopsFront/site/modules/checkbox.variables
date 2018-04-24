@@ -1,0 +1,7 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@selectedTextColor: @blue;
+// @checkboxColor: @blue;
+@checkboxBorderRadius: 0px;

@@ -1,0 +1,120 @@
+// @import "~antd/dist/antd.less";
+@import "~antd/lib/steps/style/index.less";
+@import (reference) '~FRONT_THEME/site/globals/site.variables';
+
+@font-size-lg: 13px;
+@font-family-no-number: 'Proxima Nova';
+@font-family: 'Proxima Nova';
+
+@process-icon-color: @blue;
+@process-tail-color: @orange;
+@wait-icon-color: @orange;
+
+@finish-icon-color:@blue;
+@finish-title-color: @blue;
+@finish-tail-color:@blue;
+
+@process-title-color: @orange;
+@process-icon-color: @orange;
+
+@wait-tail-color: #ced6dc;
+@wait-title-color: @boostGrey;
+@wait-icon-color: @wait-tail-color;
+
+@keyframes signaling {
+  0% {box-shadow: 0px 0px 0px 4px rgba(244, 148, 11, 0.29)}
+  50% {box-shadow: 0px 0px 0px 0px rgba(244, 148, 11, 0.29)}
+  100% {box-shadow: 0px 0px 0px 4px rgba(244, 148, 11, 0.29)}
+}
+
+.projectsPage {
+  padding: 1rem;
+  height: 100%;
+  // textarea {
+  //   height: 80px;
+  // }
+  & > .steps-content {
+    min-height: 75%;
+    & > .grid {
+      & > .ui.cards.row {
+          margin: 0.5em auto;
+      }
+    }
+  }
+  & > .ui.top.attached {
+    & > .ant-steps {
+      & > .ant-steps-item {
+        top: 2.3rem;
+        &.ant-steps-item-wait .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot {
+          box-shadow: 0px 0px 0px 4px rgba(206, 214, 221, 0.29);
+        }
+
+        &.ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot {
+          box-shadow: 0px 0px 0px 4px rgba(61, 185, 234, 0.29);
+        }
+        &.ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot {
+          box-shadow: 0px 0px 0px 6px rgba(244, 148, 11, 0.29);
+          animation-name: signaling;
+          animation-duration: 1s;
+          animation-iteration-count:infinite;
+        }
+        & > .ant-steps-item-content {
+            max-width: 138px;
+            position: relative;
+            top: -4rem;
+            left: 0.2rem;
+            & > .ant-steps-item-title {
+                line-height: 1.3em;
+                font-weight: bold;
+            }
+        }
+        & > .ant-steps-item-icon {
+          margin-left: 68px;
+        }
+      }
+    }
+  }
+}
+.projectSuccess {
+  color: @orange
+}
+
+.wizard-description {
+  color: @boostGrey;
+}
+
+.CD-cards {
+  background-color: @lightGrey !important;
+  margin-right: 5em;
+  height: 100%;
+  .CD-cards-label {
+    font-weight: 600;
+    color: @boostGrey;
+    letter-spacing: 0.07em;
+    & + .field {
+      margin-top: 0.5em;
+    }
+  }
+  & > .content:first-child {
+    min-height: 100px;
+    padding: 0.5em !important;
+    & + .content {
+      border-top-width: 0;
+    }
+  }
+}
+
+.CD-cards.finnish {
+  background-color: fade(@blue, 10%) !important;
+}
+
+.ui.list .list > .item .header, .ui.list > .item .header {
+  color: @boostGrey;
+}
+
+.billing_price {
+  color: @orange !important;
+}
+// .introduction_img {
+//   width: 55% !important;
+// }

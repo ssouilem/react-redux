@@ -1,0 +1,41 @@
+import React from 'react'
+import { Provider } from 'react-redux'
+import { createMockStore, renderIntoDocument } from 'SHARED_TESTS/testHelpers'
+import { sandbox } from 'sinon'
+import Connected{{ properCase name }}, { {{ properCase name }} } from 'containers/{{ properCase name }}/{{ properCase name }}'
+import TestUtils from 'react-addons-test-utils'
+
+describe('(containers) {{ properCase name }}', () => {
+  let _state, _store
+  beforeEach(() => {
+    sandbox.create()
+  })
+  afterEach(() => {
+    sandbox.restore()
+  })
+
+  it('should contain other react components', () => {
+    const containerProvider = getContainer('param1', 'param2')
+    TestUtils.findRenderedComponentWithType(containerProvider, {{ properCase name }})
+  })
+
+
+  it('should execute code from componentWillReceiveProps when props are updated', () => {
+    // const node = document.createElement('div')
+    // let _props = {
+    //   // initial props
+    // }
+    // render(<{{ properCase name }} { ..._props } />, node)
+    // _props = { } // updated props
+    // render(<{{ properCase name }} { ..._props } />, node)
+    // Assert code has been executed
+  })
+
+  const getContainer = (param1, param2) => {
+    _state = {
+      // Part of the state of the store the container needs (use params if necessary)
+    }
+    _store = createMockStore(_state)
+    return renderIntoDocument(<Provider store={ _store }><Connected{{ properCase name }} /></Provider>)
+  }
+})

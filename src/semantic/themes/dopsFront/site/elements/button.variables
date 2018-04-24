@@ -1,0 +1,7 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@fontWeight: bold;
+
+@invertedBorderSize: 0.5px;

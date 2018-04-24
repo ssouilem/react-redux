@@ -1,0 +1,37 @@
+@import './all.less';
+
+.modalContainer {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, .6);
+  z-index: 2000;
+  &:extend(.column, .centerContent);
+  width: 100%;
+}
+
+.modalContent {
+  border: solid 1px @open-light-light-color;
+  outline: none;
+  padding: 30px;
+  width: 60%;
+  z-index: 5000;
+  background-color: white;
+  &:extend(.column, .centerContent);
+  .roboto-font(22px, lighter, @open-dark-blue, center);
+  @media screen and (max-width: 800px) {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+.cguCross {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+  font-size: 20px;
+  color: @open-dark-gray;
+}

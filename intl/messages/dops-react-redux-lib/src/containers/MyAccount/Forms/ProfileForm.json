@@ -1,0 +1,42 @@
+[
+  {
+    "id": "profile.form.title",
+    "description": "A title for ProfileForm",
+    "defaultMessage": "Profile"
+  },
+  {
+    "id": "profile.label.email",
+    "description": "A label for Profile email",
+    "defaultMessage": "Email :"
+  },
+  {
+    "id": "profile.email.fieldname",
+    "description": "Profile email fieldname",
+    "defaultMessage": "Votre email"
+  },
+  {
+    "id": "profile.label.firstname",
+    "description": "A label for Profile firstname",
+    "defaultMessage": "Prénom :"
+  },
+  {
+    "id": "profile.firstname.fieldname",
+    "description": "Profile firstname fieldname",
+    "defaultMessage": "Votre nom"
+  },
+  {
+    "id": "profile.label.lastname",
+    "description": "A label for Profile lastname",
+    "defaultMessage": "Nom :"
+  },
+  {
+    "id": "profile.lastname.fieldname",
+    "description": "Profile lastname fieldname",
+    "defaultMessage": "Votre nom"
+  },
+  {
+    "id": "profile.button.submit",
+    "description": "Profile submit label",
+    "defaultMessage": "Modifier"
+  }
+]

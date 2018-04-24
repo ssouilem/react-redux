@@ -1,0 +1,67 @@
+[
+  {
+    "id": "checkbox.download.avatar",
+    "description": "download avatar",
+    "defaultMessage": "Télécharger une photo"
+  },
+  {
+    "id": "dropzone.message",
+    "description": "dropzone message",
+    "defaultMessage": "Try dropping some files here, or click to select files to upload."
+  },
+  {
+    "id": "dropped.files",
+    "description": "dropped file",
+    "defaultMessage": "Dropped files"
+  },
+  {
+    "id": "unit.bytes",
+    "description": "unit bytes",
+    "defaultMessage": "bytes"
+  },
+  {
+    "id": "checkbox.use.gavatar",
+    "description": "use gavatar",
+    "defaultMessage": "Avatar public Gravatar"
+  },
+  {
+    "id": "input.address.gavatar",
+    "description": "Adresse Gravatar",
+    "defaultMessage": "Adresse Gravatar"
+  },
+  {
+    "id": "title.profile.informations",
+    "description": "title profile",
+    "defaultMessage": "INFORMATIONS DU PROFIL"
+  },
+  {
+    "id": "input.first.name",
+    "description": "first name",
+    "defaultMessage": "First name"
+  },
+  {
+    "id": "input.last.name",
+    "description": "last name",
+    "defaultMessage": "Last name"
+  },
+  {
+    "id": "input.email.address",
+    "description": "e-mail address",
+    "defaultMessage": "E-mail address"
+  },
+  {
+    "id": "input.ssh.key",
+    "description": "SSH key",
+    "defaultMessage": "SSH key"
+  },
+  {
+    "id": "button.cancel",
+    "description": "button cancel",
+    "defaultMessage": "Cancel"
+  },
+  {
+    "id": "button.save",
+    "description": "button save",
+    "defaultMessage": "Save"
+  }
+]

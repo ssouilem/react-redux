@@ -1,0 +1,21 @@
+/*******************************
+             Form
+*******************************/
+
+/*-------------------
+       Elements
+--------------------*/
+@labelColor:@boostGrey;
+@inputBorderRadius: 0em;
+@inputBoxShadow: none;
+@inputColor: darken(@grey, 20%);
+
+/* Field */
+@fieldMargin: 0em 0em 1em;
+
+/* Form Label */
+@labelFontSize: @relative12px;
+@labelTextTransform: uppercase;
+
+/* (x) Wide Field */
+@gutterWidth: 1.5em;

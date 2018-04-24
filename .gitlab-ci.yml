@@ -1,0 +1,160 @@
+# This file is a template, and might need editing before it works on your project.
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: gitlab:82/dops/common/docker-images/dops
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+
+variables:
+  #SONAR_EXCLUDE: 'node_modules/**'
+  SONAR_EXCLUDE: 'config/**,node_modules/**,coverage/**,tests/**,bin/**,generators/**,cloudfoundry/**,src/axios.init.js,src/client.js,src/routes.js,src/redux/clients.js,src/redux/createStore.js,src/redux/rootReducer.js,src/redux/sagas.js,postcss.config.js'
+
+cache:
+  paths:
+  - node_modules/
+  - coverage/
+
+stages:
+  - provisioning
+  - test
+  - review
+  - deploy
+
+Provisioning:
+  stage: provisioning
+  script:
+    - npm install
+    - npm prune
+    - npm update
+
+#Test:
+ # stage: test
+ # script:
+  #  - npm run test
+ # artifacts:
+  #  paths:
+   #   - coverage/
+
+BX setup:
+  stage: test
+  script:
+   - echo | bx login -a $CFAPI --apikey "$BXAPIKEY" -o $CFORG
+   - bx cf spaces
+   - bx cf spaces|tail -n +6 | grep ^prod$ || bx cf create-space prod
+   - bx cf spaces|tail -n +6 | grep ^staging$ || bx cf create-space staging
+   - bx cf spaces|tail -n +6 | grep ^dev$ || bx cf create-space dev
+
+
+Review:
+  stage: review
+  script:
+    - cp package.json package.old.json
+    - rm package.json
+    - IFRAME_URL=middleearth-dev.dops.open.global API_SERVER=api-boost-devel.dops.open.global node scripts/api.config.js
+    - MODULE=$APP-$CI_COMMIT_REF_NAME APPDOMAIN=$APPDOMAIN npm run compile
+    - cp cloudfoundry/Staticfile dist
+    - cd dist
+    - cat Staticfile
+    - bx login -a $CFAPI  --apikey "$BXAPIKEY" -o $CFORG -s dev
+    - bx cf blue-green-deploy $APP-$CI_COMMIT_REF_NAME -f manifest.yml
+    - bx cf map-route $APP-$CI_COMMIT_REF_NAME $APPDOMAIN --hostname boost-$CI_COMMIT_REF_NAME
+    - bx cf routes
+  environment:
+    name: reviews/$CI_COMMIT_REF_NAME
+    url: https://$APP-$CI_COMMIT_REF_NAME.$APPDOMAIN
+    on_stop: stop_review_app
+  except:
+    - master
+    - devel
+    - demo
+
+Quality:
+  stage: review
+  script:
+  - sonar-scanner  -Dsonar.projectKey=$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG  -Dsonar.sources=.  -Dsonar.host.url=https://smaug.dops.open.global  -Dsonar.login=$SONAR_TOKEN -D sonar.exclusions=$SONAR_EXCLUDE -D sonar.sourceEncoding="UTF-8" -D sonar.javascript.lcov.reportPaths=coverage/lcov/lcov.info
+  - export ANALYSIS=`curl -s  --user "$SONAR_TOKEN:" "https://smaug.dops.open.global/api/qualitygates/project_status?projectKey=d$CI_PROJECT_NAME-$CI_COMMIT_REF_SLUG" |jq .projectStatus.status -r`
+  - echo $ANALYSIS
+
+
+stop_review_app:
+  stage: review
+  script:
+  - bx login  -a $CFAPI  --apikey "$BXAPIKEY" -o $CFORG -s dev
+  - bx cf delete $APP-$CI_COMMIT_REF_NAME -f -r
+  when: manual
+  environment:
+    name: reviews/$CI_COMMIT_REF_NAME
+    action: stop
+  except:
+    - master
+    - devel
+    - demo
+
+
+Development:
+  stage: deploy
+  environment:
+    name: Devel
+    url: https://boost-dev.$APPDOMAIN
+  script:
+  - cp package.json package.old.json
+  - rm package.json
+  - IFRAME_URL=middleearth-dev.dops.open.global API_SERVER=api-boost-devel.dops.open.global node scripts/api.config.js
+  - MODULE=boost-dev APPDOMAIN=$APPDOMAIN npm run compile
+  - cp cloudfoundry/Staticfile dist
+  - cd dist
+  - cat Staticfile
+  - bx login -a $CFAPI  --apikey "$BXAPIKEY" -o $CFORG -s dev
+  - bx cf bgd boost-dev -f ./manifest.yml
+  - bx cf map-route boost-dev $APPDOMAIN --hostname boost-dev
+  artifacts:
+    paths:
+    - ./*.tgz
+  only:
+    - devel
+
+Demo:
+  stage: deploy
+  environment:
+    name: demo
+    url: https://boost-demo.$APPDOMAIN
+  script:
+  - cp package.json package.old.json
+  - rm package.json
+  - IFRAME_URL=middleearth-dev.dops.open.global API_SERVER=api-boost-demo.dops.open.global node scripts/api.config.js
+  - MODULE=boost-demo APPDOMAIN=$APPDOMAIN npm run compile
+  - cp cloudfoundry/Staticfile dist
+  - cd dist
+  - cat Staticfile
+  - bx login -a $CFAPI  --apikey "$BXAPIKEY" -o $CFORG -s dev
+  - bx cf bgd boost-demo -f ./manifest.yml
+  - bx cf map-route boost-demo $APPDOMAIN --hostname boost-demo
+  artifacts:
+    paths:
+    - ./*.tgz
+  only:
+    - demo
+
+Production:
+  stage: deploy
+  environment:
+    name: production
+    url: https://boost.$APPDOMAIN
+  script:
+    - cp package.json package.old.json
+    - rm package.json
+    - IFRAME_URL=middleearth.dops.open.global API_SERVER=api-boost.dops.open.global node scripts/api.config.js
+    - MODULE=$APP APPDOMAIN=$APPDOMAIN npm run compile
+    - cp cloudfoundry/Staticfile dist
+    - cd dist
+    - cat Staticfile
+    - bx login -a $CFAPI  --apikey "$BXAPIKEY" -o $CFORG -s prod
+    - bx cf bgd boost f ./manifest.yml
+    - bx cf map-route boost $APPDOMAIN --hostname boost
+  artifacts:
+    paths:
+    - ./*.tgz
+  when: manual
+  only:
+    - master

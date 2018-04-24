@@ -1,0 +1,7 @@
+[
+  {
+    "id": "signIn.toast.title.error",
+    "description": "SignIn toast error title",
+    "defaultMessage": "Erreur interne"
+  }
+]

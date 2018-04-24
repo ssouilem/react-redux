@@ -1,0 +1,38 @@
+@import (reference) '~FRONT_THEME/site/globals/site.variables';
+
+.dropdownMenu {
+  overflow: visible;
+  border-width: 0.5px 0 0 0;
+  border-color: lighten(@black, 10%);
+  border-style: solid;
+  & > .menuItem {
+    border-width: 0 0 0.5px 0;
+    border-color: lighten(@black, 10%);
+    border-style: solid;
+    & > .item {
+      & > .icon {
+        margin: 0.5em auto !important;
+        opacity: 0.8;
+      }
+      & > .icons {
+        margin: 0.25em auto !important;
+        opacity: 0.8 !important;
+        & > .icon {
+          &.large {
+            position: relative;
+            left: 0%;
+            top: 0;
+          }
+          &.small {
+            top: 42%;
+            left: 48%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ui.dropdown.item.icon > .text {
+  display: none;
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "pagination.button.previous",
+    "description": "Previous button in pagination component",
+    "defaultMessage": "PRÉCÉDENT"
+  },
+  {
+    "id": "pagination.button.next",
+    "description": "Next button in pagination component",
+    "defaultMessage": "SUIVANT"
+  }
+]
